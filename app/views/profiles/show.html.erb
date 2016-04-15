@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<img src="<%= @profile.image %>" width="200px">
+
+<p>
+  <strong><%= @profile.name %></strong><span> - Level <%= @profile.level %></span>
+</p>
+
+<p>
+  <strong>Hometown:</strong>
+  <%= @profile.city %>, <%= @profile.country %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @profile.age %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @profile.bio %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

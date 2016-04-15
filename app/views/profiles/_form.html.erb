@@ -1,0 +1,17 @@
+<%= simple_form_for(@profile) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, placeholder: "First and last name" %>
+    <%= f.input :level %>
+    <%= f.input :city %>
+    <%= f.input :country %>
+    <%= f.input :age %>
+    <%= f.input :bio %>
+    <%= f.input :image %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -15,6 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+          <li><%= link_to 'New Team', new_team_path %></li>
           <% if current_user.profile.present? %>
             <li><%= link_to 'My Profile', profile_path(current_user.profile.id) %></li>
           <% else %>

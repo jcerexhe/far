@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong><%= @team.name %></strong>
+</h1>
+
+<p>
+  <img src="<%= @team.image %>" width="300px">
+</p>
+
+<p>
+  <strong>Average level:</strong>
+  <%= @team.average_level %>
+</p>
+
+<% if @team.users.include?(current_user) %>
+  <%= link_to "Leave my team", leave_team_path, method: :delete, class: 'btn btn-danger' %>
+<% else %>
+  <%= link_to 'Join this team!', join_team_path, class: 'btn btn-primary' %>
+<% end %>
+
+<ul>
+  <% @team.users.each do |user| %>
+    <li><strong><%= user.profile.name %></strong>, <%= user.profile.level %></li>
+  <% end %>
+</ul>
